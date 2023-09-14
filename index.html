@@ -6,6 +6,7 @@
     <title>myFirstPetProject</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="normalaze.css"/>
+    <script src="main.js"></script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
             <h2>Log in</h2>
         </header>
 
-        <form>
+        <form onsubmit="return signIn();">
             <label for="login">Login</label><br>
             <input type="text" id="login" placeholder="Login" required><br><br>
             <label for="password">Password</label><br>
