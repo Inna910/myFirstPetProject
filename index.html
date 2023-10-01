@@ -5,24 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myFirstPetProject</title>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="normalaze.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="main.js"></script>
 </head>
 <body>
-
-    <div class="form">
-        <header>
-            <h2>Log in</h2>
-        </header>
-
+    <div class="sign-in-form">
         <form onsubmit="return signIn();">
-            <label for="login">Login</label><br>
-            <input type="text" id="login" placeholder="Login" required><br><br>
-            <label for="password">Password</label><br>
-            <input type="password" id="password" placeholder="Password" required><br><br>
-            <input type="submit" value="Sign in">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" id="email" placeholder="example@adress.com" required>
+                <i class='bx bxs-user'></i><br><br>
+            </div>
+            <div class="input-box">
+            <input type="password" id="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt' ></i><br><br>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+
         </form>
     </div>
-    
+
+
+
+
+</script>
 </body>
 </html>
