@@ -6,38 +6,50 @@
     <title>myFirstPetProject</title>
     <link rel="stylesheet" href="style.css"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="validation.js" defer></script>
 </head>
 <body>
     <div class="sign-in-form">
-        <form onsubmit="return signIn();">
-            <h1>Login</h1>
+        <form id="form">
+            <h1 id="title">Login</h1>
             <div class="input-box">
-                <input type="text" id="email" placeholder="example@adress.com" required>
+                <input type="text" id="email" placeholder="example@adress.com">
                 <i class='bx bxs-user'></i><br><br>
             </div>
+            <div class="error" id="email-error">Email can't be blank</div>
             <div class="input-box">
-            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="password" placeholder="Password" onkeyup="checkPasswordLength(), checkPasswordHasSpesialSymbol(), checkPasswordHasNumber(), checkPasswordHasUppercaseLetter()">
             <i class='bx bxs-lock-alt' ></i><br><br>
             </div>
+            <div class="error" id="password-error">Password can't be blank</div>
+            <div class="password-hint" id="password-hint">
+                <input type="checkbox" id="hint-length" name="hint">
+                <label for="hint-length">8 sings long</label><br>
+                
+                <input type="checkbox" id="hint-symbol" name="hint"> 
+                <label for="hint-symbol">Containe a special symbol</label><br>
 
-            <div class="remember-forgot">
+                <input type="checkbox" id="hint-number" name="hint">
+                <label for="hint-number">Containe a number</label><br>
+
+                <input type="checkbox" id="hint-uppercase" name="hint">
+                <label for="hint-uppercase">Containe an upper case letter</label>
+            </div>
+
+            <div class="remember-forgot" id="remember-forgot">
                 <label><input type="checkbox">Remember me</label>
                 <a href="#">Forgot password?</a>
             </div>
 
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="active-btn" id="submit">Sign In</button>
+            <div class="disabled-btn"></div>
 
             <div class="register-link">
-                <p>Don't have an account? <a href="#">Register</a></p>
+                <p id="text">Don't have an account? <a href="#" id="switchToRegister">Register</a></p>
             </div>
 
         </form>
     </div>
-
-
-
-
-</script>
 </body>
 </html>
