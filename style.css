@@ -1,50 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
-body{
-    background: url(Accets/start.jpg) no-repeat center center fixed;
-    background-size: cover; 
-    font-family: 'Merriweather', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
-.form{
-    background-color: rgba(226, 163, 121, 0.8);
-    text-align: center;
-    width: 280px;
-    border-radius: 10px;
-    padding: 50px;
-    margin: 15vw 15vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     
 }
 
-input[type="text"], input[type="password"] {
-    font-family: inherit;
-    border-radius: 5px;
-    border: 2px solid #eee;
-    box-sizing: border-box;
-    padding: 10px;
-    margin: 10px;
-}
-
-*:focus {
-    outline:none !important;
-}
-
-h2 {
-    margin-bottom: 50px;
-}
-
-input[type="submit"] {
-    border: none;
-    cursor: pointer;
+body{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    border-radius: 5px;
-    padding: 13px 25px;
-    margin-top: 10px;
-    background-image: linear-gradient(#b6d18a, #649932);
-  
+    min-height: 100vh;
+    background: url(accets/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sign-in-form {
+   width: 420px;
+   background: transparent;
+   border: 2px solid rgba(255, 255, 255, .2);
+   backdrop-filter: blur(25px);
+   color: #fff;
+   border-radius: 10px;
+   padding: 30px 40px;
+}
+
+.sign-in-form h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.sign-in-form .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0 15px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+   0%, 100%{
+    margin-left: 0;
+   }
+   20%, 80%{
+    margin-left: -12px;
+   }
+   40%, 60%{
+    margin-left: 12px;
+   }
+}
+
+.input-box input::placeholder {
+    color: #cec7c7;
+    font-size: 14px;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.sign-in-form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.sign-in-form .active-btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 17px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+}
+
+.sign-in-form .active-btn:active {
+    transform: scale(0.96);
+}
+
+.sign-in-form .disabled-btn {
+    background: #cec7c7;
+    cursor: not-allowed;
+    
+}
+
+.sign-in-form .disabled-btn:active {
+    transform: none;
+}
+
+.sign-in-form .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.sign-in-form .error {
+    color: #dc3545;
+    font-size: 14px;
+    font-weight: 600;
+    visibility: hidden;
+}
+
+.password-hint {
+    display: none;
+}
+.password-hint [type="checkbox"]{
+    opacity: 0;
+}
+.password-hint [type="checkbox"] + label{
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    padding-left: 25px;
+    }
+
+.password-hint [type="checkbox"] + label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    outline: 2px solid #cec7c7;
+    background: #fff;
+}
+
+.password-hint [type="checkbox"]:checked + label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.password-hint [type="checkbox"]:checked + label::after{
+    content: "\002714";
+    color: #fff;
+    background-color: #5fd25f;
+    border-radius: 7px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
